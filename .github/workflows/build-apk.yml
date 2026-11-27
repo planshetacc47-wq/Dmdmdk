@@ -14,7 +14,10 @@ jobs:
         with: { distribution: temurin, java-version: 21 }
       - name: Install Capacitor and generate Android project
         run: |
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          - name: Prepare web assets
+  run: |
+    mkdir -p www
+    cp index.html www/index.htmlnpm install @capacitor/core @capacitor/cli @capacitor/android
           npx cap add android
           npx cap sync android
       - name: Add native floating overlay
