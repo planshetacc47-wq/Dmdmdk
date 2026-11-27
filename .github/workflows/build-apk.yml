@@ -33,9 +33,6 @@ jobs:
           npx cap add android
           npx cap sync android
 
-      - name: Add native floating overlay
-        run: bash scripts/prepare-android.sh
-
       - name: Build APK
         run: |
           cd android
